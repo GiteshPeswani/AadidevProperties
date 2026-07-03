@@ -1,0 +1,11 @@
+<div class="min-h-screen flex flex-col justify-between bg-[#F8FAFC]">
+  <app-toast></app-toast>
+  
+  <app-navbar *ngIf="!isAdminRoute()"></app-navbar>
+
+  <main class="flex-grow">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer *ngIf="!isAdminRoute()"></app-footer>
+</div>
