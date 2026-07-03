@@ -89,7 +89,14 @@ export class LoginComponent {
         this.loading.set(false);
       },
       error: (err) => {
-        const errorMsg = err.error || 'Invalid credentials. Please verify your details.';
+        let errorMsg = 'Invalid credentials. Please verify your details.';
+        if (err.error) {
+          if (typeof err.error === 'string') {
+            errorMsg = err.error;
+          } else if (typeof err.error === 'object' && err.error.message) {
+            errorMsg = err.error.message;
+          }
+        }
         this.toastService.error(errorMsg);
         this.loading.set(false);
       }

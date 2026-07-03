@@ -98,7 +98,14 @@ export class RegisterComponent {
         this.loading.set(false);
       },
       error: (err) => {
-        const errorMsg = err.error || 'Registration failed. Try a different username/email.';
+        let errorMsg = 'Registration failed. Try a different username/email.';
+        if (err.error) {
+          if (typeof err.error === 'string') {
+            errorMsg = err.error;
+          } else if (typeof err.error === 'object' && err.error.message) {
+            errorMsg = err.error.message;
+          }
+        }
         this.toastService.error(errorMsg);
         this.loading.set(false);
       }
