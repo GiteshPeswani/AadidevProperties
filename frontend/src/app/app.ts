@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './shared/navbar/navbar';
 import { FooterComponent } from './shared/footer/footer';
 import { ToastComponent } from './shared/toast/toast';
+import { ClarityService } from './service/clarity.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,11 @@ import { ToastComponent } from './shared/toast/toast';
 })
 export class App {
   router = inject(Router);
+  clarityService = inject(ClarityService);
+
+  constructor() {
+    this.clarityService.init();
+  }
 
   isAdminRoute(): boolean {
     return this.router.url.startsWith('/admin');
