@@ -6,9 +6,9 @@ spring:
   application:
     name: Office
   datasource:
-    url: jdbc:mysql://localhost:3306/aadidevbackend?createDatabaseIfNotExist=true
-    username: root
-    password: gitesh
+    url: jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/aadidevbackend?sslMode=VERIFY_IDENTITY
+    username: 28TpS6jsGMAeuBv.root
+    password: vInClPCfTUICKg9Q
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:

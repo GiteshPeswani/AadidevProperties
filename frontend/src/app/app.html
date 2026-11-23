@@ -1,11 +1,17 @@
 <div class="min-h-screen flex flex-col justify-between bg-[#F8FAFC]">
   <app-toast></app-toast>
   
-  <app-navbar *ngIf="!isAdminRoute()"></app-navbar>
+  <!-- Automatic Backend Wake-Up & Retry Screen -->
+  <app-backend-connecting *ngIf="!backendHealthService.isAvailable()"></app-backend-connecting>
 
-  <main class="flex-grow">
-    <router-outlet></router-outlet>
-  </main>
+  <!-- Main Website Content: Loads automatically when backend is active -->
+  <ng-container *ngIf="backendHealthService.isAvailable()">
+    <app-navbar *ngIf="!isAdminRoute()"></app-navbar>
 
-  <app-footer *ngIf="!isAdminRoute()"></app-footer>
+    <main class="flex-grow">
+      <router-outlet></router-outlet>
+    </main>
+
+    <app-footer *ngIf="!isAdminRoute()"></app-footer>
+  </ng-container>
 </div>

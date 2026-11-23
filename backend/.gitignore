@@ -5,6 +5,18 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+# Database dumps & SQL files
+*.sql
+*.sql.gz
+*.sqlite
+*.db
+
+# Logs & temp files
+*.log
+*.log.*
+*.tmp
+*.txt
+
 ### STS ###
 .apt_generated
 .classpath

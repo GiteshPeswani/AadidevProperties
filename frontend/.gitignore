@@ -38,6 +38,12 @@ testem.log
 /typings
 __screenshots__/
 
+# Database dumps & SQL files
+*.sql
+*.sql.gz
+*.sqlite
+*.db
+
 # System files
 .DS_Store
 Thumbs.db

@@ -1,0 +1,119 @@
+# ==============================================================================
+# Aadidev Properties - Master .gitignore
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Database & MySQL Files (STRICT PRIVACY - NO TABLES/DUMPS EXPOSED)
+# ------------------------------------------------------------------------------
+*.sql
+*.sql.gz
+*.sql.tar
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.rdb
+aadidevbackend.sql
+/mysql/
+/database_dumps/
+/backups/
+
+# ------------------------------------------------------------------------------
+# 2. Logs, Diagnostic & Temporary Files
+# ------------------------------------------------------------------------------
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.out
+*.tmp
+*.bak
+*.swp
+*test*.txt
+*_output*.txt
+node_test.txt
+node_version.txt
+test_write.txt
+wrapper_test.txt
+
+# ------------------------------------------------------------------------------
+# 3. Backend (Java / Spring Boot / Gradle / Maven)
+# ------------------------------------------------------------------------------
+backend/.gradle/
+backend/build/
+backend/out/
+backend/bin/
+backend/.apt_generated
+backend/.classpath
+backend/.factorypath
+backend/.project
+backend/.settings/
+backend/.springBeans
+backend/.sts4-cache
+.gradle/
+build/
+out/
+bin/
+target/
+*.class
+*.jar
+*.war
+*.ear
+!gradle/wrapper/gradle-wrapper.jar
+!backend/gradle/wrapper/gradle-wrapper.jar
+
+# ------------------------------------------------------------------------------
+# 4. Frontend (Angular / Node.js)
+# ------------------------------------------------------------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/tmp/
+frontend/out-tsc/
+frontend/.angular/
+frontend/.sass-cache/
+frontend/coverage/
+node_modules/
+dist/
+tmp/
+.angular/
+.sass-cache/
+coverage/
+
+# ------------------------------------------------------------------------------
+# 5. Environment Variables & Secret Files
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.local
+
+# ------------------------------------------------------------------------------
+# 6. IDEs & Editors
+# ------------------------------------------------------------------------------
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# ------------------------------------------------------------------------------
+# 7. OS & System Files
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
